@@ -2,9 +2,11 @@ import { BsBarChartSteps } from "react-icons/bs";
 import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Header = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const {data: sessinon} = useSession();
 
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -38,13 +40,23 @@ const Header = () => {
         </div>
 
         <div className="profile ">
-          <img
-            src="./images/profile.avif"
-            alt="Md profile"
-            width={45}
-            height={45}
-            style={{borderRadius: '50%'}}
-          />
+          {sessinon ? (
+            <img
+              src={sessinon.user.image}
+              alt="Md profile"
+              width={45}
+              height={45}
+              style={{ borderRadius: "50%" }}
+            />
+          ) : (
+            <img
+              src="./images/profile.avif"
+              alt="Md profile"
+              width={45}
+              height={45}
+              style={{ borderRadius: "50%" }}
+            />
+          )}
         </div>
       </div>
     </header>
