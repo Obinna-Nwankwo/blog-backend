@@ -2,9 +2,9 @@ import useFetchData from "@/hooks/useFetchData";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
 import { FaEdit } from "react-icons/fa";
-import { MdOutlinePendingActions } from "react-icons/md";
+import { MdOutlinePendingActions } from "react-icons/md"; 
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
 const Draft = () => {
@@ -56,18 +56,18 @@ const Draft = () => {
     return (
       <div className="blogpage">
         <div className="titledashboard flex flex-sb">
-          <div>
+          <div data-aos="fade-right">
             <h2>
               Draft <span>Blog</span>
             </h2>
             <h3>Super User Panel</h3>
           </div>
-          <div className="breadcrumb">
+          <div className="breadcrumb" data-aos="fade-left">
             <MdOutlinePendingActions /> <span>/</span> <span>Draft Blogs</span>
           </div>
         </div>
 
-        <div className="blogstable">
+        <div className="blogstable" data-aos="fade-up">
           <table>
             <thead>
               <tr>
@@ -103,7 +103,7 @@ const Draft = () => {
                             <FaEdit />
                           </button>
                         </Link>
-                        <Link href={`/blogs/edit/${blog._id}`}>
+                        <Link href={`/blogs/delete/${blog._id}`}>
                           <button title="delete">
                             <RiDeleteBin6Fill />
                           </button>

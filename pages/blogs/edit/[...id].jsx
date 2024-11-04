@@ -14,13 +14,19 @@ const EditBlog = () => {
 
   const [product, setProduct] = useState(null);
 
+   // Fetch product information when `id` is available
   useEffect(() => {
     if (id) {
-      axios.get(`/api/blogApi/${id}`).then((res) => {
-        setProduct(res.data);
-      });
+      axios
+        .get(`http://localhost:3000/api/blogApi?id=${id}`)
+        .then((response) => {
+          setProduct(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching product info:", error);
+        });
     }
-  }, [id]); // Fix here: add dependency array
+  }, [id]);
 
   useEffect(() => {
     if (!session) {

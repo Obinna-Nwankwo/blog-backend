@@ -6,7 +6,7 @@ import { GrChapterAdd } from "react-icons/gr";
 
 const AddBlog = () => {
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession();  
 
   useEffect(() => {
     if (!session) {
@@ -25,14 +25,14 @@ const AddBlog = () => {
       <>
         <div className="addblogspage">
           <div className="titledashboard flex flex-sb">
-            <div>
+            <div data-aos="fade-right">
               <h2>
                 Add <span>Blog</span>
               </h2>
               <h3>Supper User Panel</h3>
             </div>
 
-            <div className="breadcrumb">
+            <div className="breadcrumb" data-aos="fade-left">
               <GrChapterAdd /> <span>/</span> <span>Add Blog</span>
             </div>
           </div>
@@ -41,7 +41,7 @@ const AddBlog = () => {
             <Blog />
           </div>
         </div>
-      </> 
+      </>
     );
   }
 };

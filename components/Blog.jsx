@@ -53,7 +53,7 @@ const Blog = ({
   return (
     <>
       <form onSubmit={createProduct} className="addWebsiteform">
-        <div className="w-100 flex flex-col flex-left mb-2">
+        <div className="w-100 flex flex-col flex-left mb-2" data-aos="fade-up">
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -64,7 +64,7 @@ const Blog = ({
           />
         </div>
 
-        <div className="w-100 flex flex-col flex-left mb-2">
+        <div className="w-100 flex flex-col flex-left mb-2" data-aos="fade-up">
           <label htmlFor="slug">Slug</label>
           <input
             value={slug}
@@ -76,7 +76,7 @@ const Blog = ({
           />
         </div>
 
-        <div className="w-100 flex flex-col flex-left mb-2">
+        <div className="w-100 flex flex-col flex-left mb-2" data-aos="fade-up">
           <label htmlFor="category">Category</label>
           <select
             name="category"
@@ -95,7 +95,9 @@ const Blog = ({
             <option value="deployment">Deployment</option>
           </select>
           <p className="existingcategory flex gap-1 mt-1 mb-1">
-            Selected: <span>category</span>
+            Selected:{" "}
+            {Array.isArray(existingBlogCategory) &&
+              existingBlogCategory.map((category) => <span>{category}</span>)}
           </p>
         </div>
 
@@ -155,7 +157,7 @@ const Blog = ({
           />
         </div>
 
-        <div className="w-100 flex flex-col flex-left mb-2">
+        <div className="w-100 flex flex-col flex-left mb-2" data-aos="fade-up">
           <label htmlFor="tags">Tags</label>
           <select
             name="tags"
@@ -176,11 +178,13 @@ const Blog = ({
             <option value="database">Database</option>
           </select>
           <p className="existingtag flex gap-1 mt-1 mb-1">
-            Selected: <span>tag</span>
+            Selected:{" "}
+            {Array.isArray(existingTags) &&
+              existingTags.map((tags) => <span>{tags}</span>)}
           </p>
         </div>
 
-        <div className="w-100 flex flex-col flex-left mb-2">
+        <div className="w-100 flex flex-col flex-left mb-2" data-aos="fade-up">
           <label htmlFor="status">Status</label>
           <select
             name="status"
@@ -193,7 +197,7 @@ const Blog = ({
             <option value="draft">Draft</option>
           </select>
           <p className="existingstatus flex gap-1 mt-1 mb-1">
-            Selected: <span>status</span>
+            Selected: <span>{existingStatus}</span>
           </p>
         </div>
 

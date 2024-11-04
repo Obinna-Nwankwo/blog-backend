@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import { SessionProvider } from "next-auth/react";
 import { useState } from "react";
+import Aos from "@/components/Aos";
 
 export default function App({
   Component,
@@ -24,7 +25,9 @@ export default function App({
               <SideBar />
             </div>
             <main>
-              <Component {...pageProps} />
+              <Aos>
+                <Component {...pageProps} />
+              </Aos>
             </main>
           </>
         )}

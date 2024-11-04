@@ -16,7 +16,7 @@ const SideBar = () => {
     setClicked(!clicked);
   };
 
-  const handleLinkClicked = (link) => {
+  const handleLinkClicked = (link) => { 
     setActiveLink(link);
     setClicked(false);
   };

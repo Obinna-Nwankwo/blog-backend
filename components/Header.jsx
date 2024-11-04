@@ -19,7 +19,7 @@ const Header = () => {
           setIsFullScreen(false);
         });
       }
-    }
+    } 
   };
 
   return (
