@@ -14,7 +14,7 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(4);
   const { alldata, loading } = useFetchData(
-    "http://localhost:3000/api/blogApi"
+    "/api/blogApi"
   );
 
   // Filter published blogs based on search query

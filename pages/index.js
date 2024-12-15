@@ -40,7 +40,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/blogApi");
+        const res = await fetch("/api/blogApi");
         const data = await res.json();
         setBlogData(data);
         console.log("fetching all data", data);

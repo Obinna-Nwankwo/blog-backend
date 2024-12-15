@@ -17,7 +17,7 @@ const Draft = () => {
 
 
   const { alldata, loading } = useFetchData(
-    "http://localhost:3000/api/blogApi"
+    "/api/blogApi"
   );
 
   useEffect(() => {

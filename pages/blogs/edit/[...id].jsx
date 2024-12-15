@@ -18,7 +18,7 @@ const EditBlog = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:3000/api/blogApi?id=${id}`)
+        .get(`/api/blogApi?id=${id}`)
         .then((response) => {
           setProduct(response.data);
         })
