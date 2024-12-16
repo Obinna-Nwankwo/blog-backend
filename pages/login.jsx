@@ -32,7 +32,8 @@ const Login = () => {
         <img src="./images/obiTech.jpg" width={230} height={230} />
         <h1>Welcome Super User of ObiTech Blog 👋</h1>
         <p>
-          Visit our main website <a href="/">ObiTech</a>
+          Visit our main website
+          <a href="https://obitech-portfolio.netlify.app/">ObiTech</a>
         </p>
 
         <button className="mt-2" onClick={login}>
